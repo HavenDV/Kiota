@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup Label="Base packages">
+    <PackageReference Include="H.Generators.Extensions" Version="1.15.1" />
+    <PackageReference Include="H.Generators.Tests.Extensions" Version="1.15.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3" />
+    <PackageReference Include="MSTest.TestAdapter" Version="3.0.4" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.0.4" />
+    <PackageReference Include="FluentAssertions" Version="6.11.0" />
+  </ItemGroup>
+
+  <ItemGroup Label="Generator tests packages">
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.SourceGenerators.Testing.MSTest" Version="1.1.1" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.6.0" />
+    <PackageReference Include="Verify.MSTest" Version="20.5.0" />
+    <PackageReference Include="Verify.SourceGenerators" Version="2.1.0" />
+    <PackageReference Include="H.Resources.Generator" Version="1.5.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup Label="GlobalUsings">
+    <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
+    <Using Include="FluentAssertions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\libs\Kiota.Generators\Kiota.Generators.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Resources\openapi_from_yaml_file.nswag" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Remove="Resources\openapi_from_yaml.nswag" />
+    <AdditionalFiles Remove="Resources\openapi_from_url.nswag" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Snapshots\Tests.GeneratesWithoutNSwagFilesCorrectly_Diagnostics.verified.txt" />
+    <None Remove="Snapshots\Tests.GeneratesFromYamlFileCorrectly_Diagnostics.verified.txt" />
+    <None Remove="Snapshots\Tests.GeneratesFromYamlFileCorrectly#GeneratesFromYamlFileCorrectly.nswag.verified.cs" />
+    <None Remove="Snapshots\Tests.GeneratesFromYamlCorrectly_Diagnostics.verified.txt" />
+    <None Remove="Snapshots\Tests.GeneratesFromYamlCorrectly#GeneratesFromYamlCorrectly.nswag.verified.cs" />
+    <None Remove="Snapshots\Tests.GeneratesFromUrlCorrectly_Diagnostics.verified.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Snapshots\" />
+  </ItemGroup>
+
+</Project>

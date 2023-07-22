@@ -1,0 +1,14 @@
+﻿<Project>
+
+  <ItemGroup>
+    <CompilerVisibleProperty Include="Kiota_ClassName"/>
+    <CompilerVisibleProperty Include="Kiota_NamespaceName"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="**\*.yml" />
+    <AdditionalFiles Include="**\*.yaml" />
+    <AdditionalFiles Include="**\*.json" />
+  </ItemGroup>
+
+</Project>
